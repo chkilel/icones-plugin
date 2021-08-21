@@ -1,0 +1,97 @@
+<?php
+if (!empty($placeholder)) {
+    $placeholder = e(trans($placeholder));
+}
+?>
+
+
+<div class="form-group <?= $sizeClass ?>">
+    <select class="form-control custom-select icones-finder"
+            id="<?= $id; ?>"
+            name="<?= $name; ?>"
+    >
+        <?php if (empty($value)): ?>
+            <option value=""></option>
+        <?php endif; ?>
+
+    </select>
+</div>
+
+<script>
+
+    <?php if ($value != null): ?>
+
+    var selected = [{
+        "id": '<?= $value->id ?>',
+        "name": '<?= $value->name ?>',
+        "readable_name": '<?php if ($showName) echo $value->readable_name; ?>',
+        "icon_set_name": '<?php if ($showIconSetName) echo $value->icon_set_name; ?>',
+        "icon_set_id": '<?= $value->icon_set_id ?>',
+        "svg": '<?= $value->toSVG($svgProps); ?>',
+    }];
+    <?php endif; ?>
+
+
+    function displayItem(icon) {
+        return {
+            id: icon.id,
+            text: `<div class="select2-result-wrapper">
+                        <div class="select2-result-icon">
+                              ${icon.svg}
+                              <span class="select2-result-icon__name">${icon.readable_name}</span>
+                        </div>
+                        <div class="select2-result-icon-icon-set--name">${icon.icon_set_name}</div>
+                    </div>`
+        };
+    }
+
+    $("#<?= $id; ?>").select2({
+        ajax: {
+            url: '/icons',
+            dataType: 'json',
+            delay: 250,
+            cache: true,
+            data: function (params) {
+                return {
+                    search: params.term,
+                    page: params.page || 1,
+                    <?php if (count($iconSets) != 0): ?>
+                        icon_sets: <?= json_encode($iconSets)  ?>,
+                    <?php endif; ?>
+
+                    <?php  if($showName): ?>
+                        show_icon_name: <?= $showName ?>,
+                    <?php endif ?>
+
+                    <?php  if($showIconSetName): ?>
+                        show_icon_set_name: <?= $showIconSetName ?>,
+                    <?php endif ?>
+
+                    <?php if ($size != null) echo "size: '{$size}',";?>
+
+                };
+            },
+            processResults: function (data) {
+                return {
+                    results: $.map(data.results, displayItem),
+                    pagination: data.pagination,
+
+                };
+            },
+        },
+        <?php if ($value != null): ?>
+        data: $.map(selected, displayItem),
+        <?php endif; ?>
+        escapeMarkup: function (markup) {
+            return markup;
+        },
+        placeholder: {
+            id: '',
+            text: '<?= !empty($placeholder) ? $placeholder : e(trans('chkilel.icones::lang.formwidgets.placeholder')) ?>',
+        },
+        allowClear: true,
+        minimumInputLength: 2,
+        width: 'style',
+    });
+
+</script>

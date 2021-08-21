@@ -1,0 +1,22 @@
+<?= Block::put('body') ?>
+<div class="layout">
+    <div class="layout-row">
+        <?= Form::open(['onsubmit' => 'return false']) ?>
+        <div class="layout theme-selector-layout" id="icon-sets-list">
+            <?= $this->makePartial('icon-sets_list') ?>
+        </div>
+        <?= Form::close() ?>
+    </div>
+</div>
+<?= Block::endPut() ?>
+
+
+
+
+<script>
+    function scrollToTop() {
+        $('html, body').animate({scrollTop : 0},700);
+        return false;
+    }
+</script>
+

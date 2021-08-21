@@ -1,0 +1,7 @@
+1.0.0:
+    - 'First version of Icônes'
+    - create_icon_sets_table.php
+    - create_icons_table.php
+    - seed_icon_sets_table.php
+
+

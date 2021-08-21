@@ -1,0 +1,15 @@
+plugin:
+    name: 'chkilel.icones::lang.plugin.name'
+    description: 'chkilel.icones::lang.plugin.description'
+    author: 'Adil Chehabi <Chkilel>'
+    icon: icon-bomb
+    homepage: 'https://github.com/chkilel/icones-plugin'
+permissions:
+    'chkilel.icones.access_settings':
+        tab: 'chkilel.icones::lang.permission.manage_tab'
+        label: 'chkilel.icones::lang.permission.access_settings'
+        order: 100
+    'chkilel.icones.manage_installation':
+        tab: 'chkilel.icones::lang.permission.manage_tab'
+        label: 'chkilel.icones::lang.permission.manage_installation'
+        order: 200

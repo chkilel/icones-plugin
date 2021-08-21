@@ -1,0 +1,35 @@
+/*
+ * Styling iconesfinder form field
+ */
+
+.select2-result-wrapper {
+	align-items: center;
+	justify-content: space-between;
+	display: flex;
+}
+
+.select2-result-icon svg {
+    margin-right: 1em;
+
+}
+
+.select2-result-icon__name{
+    font-weight: 500;
+}
+
+.select2-result-icon {
+	align-items: center;
+    display: flex;
+}
+.select2-result-icon-set {
+	align-items: center;
+    display: flex;
+    margin-right: 20px
+/*     flex-grow: 1; */
+}
+
+
+.select2-result-icon-icon-set--name {
+
+margin-right: 14px;
+}

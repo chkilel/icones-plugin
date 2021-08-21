@@ -1,0 +1,31 @@
+{
+    "name": "chkilel/icones-plugin",
+    "description": "Access thousands of icons including popular icon sets, icon fonts and several Emoji sets from a backed Form Widget",
+    "type": "october-plugin",
+    "homepage": "https://github.com/chkilel/icones-plugin",
+    "keywords": [
+        "octobercms",
+        "icones",
+        "svg",
+        "icon",
+        "iconify"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adil Chehabi",
+            "email": "adil@chehabi.ma",
+            "role": "Creator",
+            "homepage": "https://chehabi.me"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "composer/installers": "~1.0",
+        "iconify/json": "*",
+        "iconify/json-tools": "^1.0"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    }
+}

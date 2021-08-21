@@ -1,0 +1,140 @@
+<?php
+//dd($iconSetsPaginator->count(),
+//    $iconSetsPaginator->currentPage(),
+//    $iconSetsPaginator->total(),
+//    $iconSetsPaginator->url(2),
+//    $iconSetsPaginator->hasMorePages(),
+//    $iconSetsPaginator->lastPage(),
+//    $iconSetsPaginator->nextPageUrl(),
+//    $iconSetsPaginator->perPage(),
+//    $iconSetsPaginator->previousPageUrl(),
+//
+//    ceil($iconSetsPaginator->total() / $iconSetsPaginator->perPage()) ,
+//
+//)
+
+$totalPages = ceil($iconSetsPaginator->total() / $iconSetsPaginator->perPage())
+?>
+<?php $iconSetsWithSamples = $iconSetsPaginator->items() ?>
+
+
+<?php foreach ($iconSetsWithSamples as $index => $iconSet): ?>
+
+    <div id="themeListItem-<?= $iconSet->id ?>"
+         class="layout-row min-size <?= $iconSet->isEnabled() ? 'active' : null ?> <?= $iconSet->isInstalled() && !$iconSet->isEnabled() ? 'installed' : null ?>"
+    >
+        <?= $this->makePartial('icon-sets_list_item', ['iconSet' => $iconSet]) ?>
+    </div>
+
+<?php endforeach ?>
+
+
+<div class="layout-row links">
+    <div class="layout-cell theme-thumbnail">
+        <!-- Spacer -->
+    </div>
+
+    <div class="layout-cell theme-description">
+
+
+            <div class="loading-indicator-container">
+                <div class="loading-indicator indicator-center" style="display: none;">
+                    <span></span>
+                </div>
+            </div>
+        <div class="control-pagination m-b">
+            <span class="page-iteration">
+
+                Displayed records:
+                <?= ($iconSetsPaginator->currentPage() - 1) * $iconSetsPaginator->perPage() + 1 ?>
+                -
+                <?= $iconSetsPaginator->currentPage() * $iconSetsPaginator->perPage() ?>
+                of
+                <?= $iconSetsPaginator->total() ?>
+
+            </span>
+
+            <?php if ($iconSetsPaginator->currentPage() === 1): ?>
+                <span class="page-first" title="First page"></span>
+                <span class="page-back" title="Previous page"></span>
+            <?php else: ?>
+
+                <a href="javascript:;"
+                   class="page-first"
+                   title="First page"
+                   data-request="onPaginate"
+                   data-request-data="page: 1"
+                   data-request-loading=".loading-indicator"
+                   data-request-success ="scrollToTop()"
+
+                ></a>
+
+                <a href="javascript:;"
+                   class="page-back"
+                   title="Previous page"
+                   data-request="onPaginate"
+                   data-request-data="page: <?= $iconSetsPaginator->currentPage() - 1 ?>"
+                   data-request-loading=".loading-indicator"
+                   data-request-success ="scrollToTop()"
+                ></a>
+
+            <?php endif ?>
+
+            <select
+                data-request="onPaginate"
+                data-request-loading=".loading-indicator"
+                data-request-success ="scrollToTop()"
+                name="page"
+                class="form-control custom-select select-no-search">
+
+                <?php
+                for ($x = 1; $x <= $totalPages; $x ++) {
+
+                    $selected = $x === $iconSetsPaginator->currentPage() ? 'selected' : null;
+
+                    echo "<option value='{$x}' {$selected}>{$x}</option>";
+                }
+                ?>
+
+
+            </select>
+
+
+            <?php if ($iconSetsPaginator->currentPage() === $iconSetsPaginator->lastPage()): ?>
+                <span class="page-next" title="Next page"></span>
+                <span class="page-last" title="Last page"></span>
+            <?php else: ?>
+                <a href="javascript:;"
+                   class="page-next"
+                   title="Next page"
+                   data-request="onPaginate"
+                   data-request-data="page: <?= $iconSetsPaginator->currentPage() + 1 ?>"
+                   data-request-loading=".loading-indicator"
+                   data-request-success ="scrollToTop()"
+                ></a>
+                <a href="javascript:;"
+                   class="page-last"
+                   title="page-last"
+                   data-request="onPaginate"
+                   data-request-data="page: <?= $iconSetsPaginator->lastPage() ?>"
+                   data-request-loading=".loading-indicator"
+                   data-request-success ="scrollToTop()"
+                ></a>
+
+            <?php endif ?>
+
+        </div>
+
+        <a
+            class="find-more-themes"
+            id="scroll_To_Top"
+            href='javascript:void(0)'
+            onclick="scrollToTop()"
+           >
+            <?= e(trans('chkilel.icones::lang.settings.scroll_to_top')) ?>
+        </a>
+
+    </div>
+</div>
+
+
