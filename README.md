@@ -94,7 +94,7 @@ Option | Description| Default if not set
 **size** | **Optional**: Specifies the field size. Options: small, large.| Normal size
 **placeholder** |**Optional**: The text to show when nothing is selected.| -- Choose an icon --  *Translated string*.
 
-<a name="show-name"></a
+
 ### Form field showName option
 
 Show the name of the icon in the field.
