@@ -5,7 +5,7 @@
     ],
     "formwidgets" => [
         "placeholder" => "-- Choisir une icône --",
-        "error_wrong_variable_type" => "Le filtre Twig iconify doit être appliqué a une variable de type Icones",
+        "error_wrong_variable_type" => "Le filtre Twig iconify doit être appliqué a une variable de type Icones, la variable [:variable] est de type [:type]",
     ],
     "settings" => [
         "title" => "Icônes",

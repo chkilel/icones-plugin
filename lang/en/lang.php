@@ -5,7 +5,7 @@
     ],
     'formwidgets' => [
         'placeholder' => '-- Choose an icon --',
-        'error_wrong_variable_type' => 'Iconify filter can only be applied to variable of type Icones',
+        'error_wrong_variable_type' => 'Iconify filter can only be applied to variable of type Icones, the given variable [:variable] is of type [:type]',
     ],
     'settings' => [
         'title' => 'Icônes',

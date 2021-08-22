@@ -2,6 +2,7 @@
 
 use Chkilel\Icones\Models\Icon;
 use Chkilel\Icones\Models\IconSet;
+use ApplicationException;
 use Iconify\JSONTools\Collection as IconifyCollection;
 
 class Helpers
@@ -63,7 +64,6 @@ class Helpers
                 $icon['readable_name'] = $showName ?  $icon['name']: '' ;
                 $icon['icon_set_name'] = $showIconSetName ?  $icon['icon_set_name']: '' ;
                 $results[$index] = $icon;
-
             }
         }
 
@@ -131,16 +131,38 @@ class Helpers
     }
 
     /**
-     * Mape an array of icon's attributes to an Icon model
+     * Mape a JSON representation of icon's attributes to an Icon model
      * @param $jsonIcon
      * @return Icon
      */
-    public static function mapIcon($iconArray)
+    public static function mapIcon($jsonIcon)
     {
-        $icon = new Icon();
-        foreach ($iconArray as $key => $attribute) {
-            $icon->{$key} = $attribute;
+        $keys = [
+            "id", "icon_set_id", "name", "parent", "icon_set_name", "body", "hidden",
+            "left", "top", "width", "height", "rotate", "hFlip", "vFlip",
+            "inlineTop", "inlineHeight", "verticalAlign"
+        ];
+
+        // We check if the given value is a Json representation of an icon.
+        $iconArray = json_decode($jsonIcon, true) ?? [];
+//        dd($iconArray,$jsonIcon, gettype($jsonIcon) );
+        $iconArrayKeys = array_keys($iconArray);
+        $isIcon = count(array_diff($keys, $iconArrayKeys)) == 0;
+
+        if ($isIcon) {
+            //Although we could grab the model by its Id,  We construct the object from the Json,
+            // in case the icon is no more in DB if the icon set is deleted for example
+            $icon = new Icon();
+            foreach ($iconArray as $key => $attribute) {
+                $icon->{$key} = $attribute;
+            }
+        } else {
+            throw new ApplicationException(trans("chkilel.icones::lang.formwidgets.error_wrong_variable_type", [
+                'variable' => $jsonIcon,
+                'type' =>gettype($jsonIcon),
+            ]));
         }
+
         return $icon;
     }
 

@@ -1,43 +1,17 @@
 <?php namespace Chkilel\Icones\Classes;
 
-use ApplicationException;
 use Chkilel\Icones\Models\Icon;
 
 class JsonIcon
 {
-
-
-    // Serialized icon from DB
-    protected $jsonIcon;
-
     // Icon model
     protected $icon;
 
     public function __construct($jsonIcon)
     {
-
+        // $jsonIcon is the Serialized icon from DB
         if ($jsonIcon != null) {
-            $this->jsonIcon = $jsonIcon;
-
-            $keys = [
-                "id", "icon_set_id", "name", "parent", "icon_set_name", "body", "hidden",
-                "left", "top", "width", "height", "rotate", "hFlip", "vFlip",
-                "inlineTop", "inlineHeight", "verticalAlign"
-            ];
-
-            // We check if the given value is a Json representation of an icon.
-            $iconArray = json_decode($jsonIcon, true) ?? [];
-            $iconArrayKeys = array_keys($iconArray);
-            $isIcon = count(array_diff($keys, $iconArrayKeys)) == 0;
-
-            if ($isIcon) {
-                //Although we could grab the model by its Id,  We constructed the object from the Json,
-                // I'm doing this sort of double-checking
-                $icon = Helpers::mapIcon($iconArray);
-                $this->icon = $icon;
-            } else {
-                throw new ApplicationException(trans("chkilel.icones::lang.formwidgets.error_wrong_variable_type"));
-            }
+            $this->icon = Helpers::mapIcon($jsonIcon);
         }
     }
 
