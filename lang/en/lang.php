@@ -20,7 +20,7 @@
         'delete_confirm' => 'Are you sure you want to delete this Icon Set?',
         'install_button' => 'Install',
         'flash_enabled' => 'The Icon Set was enabled succesfully',
-        'flash_desabled' => 'The Icon Set was desabled succesfully',
+        'flash_disabled' => 'The Icon Set was disabled succesfully',
         'flash_deleted' => 'The Icon Set was deleted succesfully',
         'flash_installed' => 'The Icon Set was installed succesfully',
         'flash_error_installation' => 'Something wrong happened, Icon Set was not installed',

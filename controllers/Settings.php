@@ -137,7 +137,7 @@ class Settings extends Controller
             $iconSet->is_enabled = false;
             $iconSet->save();
             $this->vars['iconSetsPaginator'] = $this->iconSetsPaginator(1);
-            \Flash::success(trans('chkilel.icones::lang.settings.flash_desabled'));
+            \Flash::success(trans('chkilel.icones::lang.settings.flash_disabled'));
             return [
                 '#icon-sets-list' => $this->makePartial('icon-sets_list')
             ];
