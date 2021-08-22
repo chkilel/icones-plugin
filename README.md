@@ -5,7 +5,7 @@ One library, over **100,000** vector icons, Modern replacement for icon fonts. F
 
 - **108+** icon sets powered by [Iconify](https://iconify.design/)
 - Browse the icons on [Iconify](https://icon-sets.iconify.design/) or on [Icônes](https://icones.netlify.app/)
-  ![Icônes FormWidget](./assets/images/iconesfinder-formwidget.png)
+  ![Icônes FormWidget](https://res.cloudinary.com/chkilel/image/upload/v1629581584/icones-plugin/README/iconesfinder-formwidget_h5ap6y.png)
 
 ## Advantages of this form widget
 Every time I use icon fonts, end users don't find them appealing, or even they don't find what they want.
@@ -20,6 +20,23 @@ Icônes combines pixel perfect rendering of SVG with ease of use of glyph fonts,
 You don't need to load any dependency at all.
 
 You can use Font Awesome, Material Design Icons, Unicons, Dashicons, Emoji, ... and many other icon sets on same page or application using one form widget.
+
+# TOC
+- [Installation](#installation)
+- [How to use](#how-to-use)
+- [Field Options](#field-options)
+    - [Form field showName option](#form-field-showName-option)
+    - [Form field showIconSetName option](#form-field-showIconSetName-option)
+    - [Form field size option](#form-field-size-option)
+    - [Form field iconSets option](#form-field-iconSets-option)
+- [Settings](#settings)
+- [Permissions](#permissions)
+- [Usage in Twig template](#usage-in-twig-template)
+    - [Twig filter options](#twig-filter-options)
+        - [Options detail](#options-detail)
+- [Usage in PHP](#usage-in-php)
+- [Usage in Backend List](#usage-in-backend-list)
+
 
 ## Installation
 Simply install the plugin from the marketplace or clone the repository [https://github.com/chkilel/icones-plugin](https://github.com/chkilel/icones-plugin) from GitHub into the plugins folder.
@@ -73,44 +90,44 @@ Option | Description| Default if not set
 ------------- | ------------- | --------------
 **showName** |**Optional**: Show the name of the **icon** beside the SVG in the field. Options: true, false.| true
 **showIconSetName** |**Optional**: Show the name of the **icon set** beside the SVG in the field. Options: true, false.| true
-**iconSets** |**Optional**: (abbreviated name of the icon set) <br> Define the icon sets to choose from, the icon sets must be enable in the setting area. see ([available icon sets](#Icon set name)) bellow for available options. <br> *If it's not set, the user can choose from all enabled icon sets.*| All enabled icon sets in the settings area
+**iconSets** |**Optional**: (abbreviated name of the icon set). Define the icon sets to choose from, the icon sets must be enable in the setting area. see [available icon sets](#form-field-iconSets-option) bellow for available options. *If it's not set, the user can choose from all enabled icon sets.*| All enabled icon sets in the settings area
 **size** | **Optional**: Specifies the field size. Options: small, large.| Normal size
-**placeholder** |**Optional**: The text to show when nothing is selected.| -- Choose an icon --  <br/>Translated string.
+**placeholder** |**Optional**: The text to show when nothing is selected.| -- Choose an icon --  *Translated string*.
 
-
-### Form field widget `showName` option
+<a name="show-name"></a
+### Form field showName option
 
 Show the name of the icon in the field.
 
 Value | Appearance
 ------------- | -------------
-true | ![showName set to true](assets/images/with-name.jpeg)
-false | ![showName set to false](assets/images/without-name.jpeg)
+true | ![showName set to true](https://res.cloudinary.com/chkilel/image/upload/v1629581583/icones-plugin/README/with-name_qppe6l.jpg)
+false | ![showName set to false](https://res.cloudinary.com/chkilel/image/upload/v1629581582/icones-plugin/README/without-name_kmtuz8.jpg)
 
 
-### Form field widget `showIconSetName` option
+### Form field showIconSetName option
 
 Show the name of the icon set in the field.
 
 Value | Appearance
 ------------- | -------------
-true | ![showIconSetName set to true](assets/images/with-icon-set-name.jpeg)
-false | ![showIconSetName set to false](assets/images/without-icon-set-name.jpeg)
+true | ![showIconSetName set to true](https://res.cloudinary.com/chkilel/image/upload/v1629581583/icones-plugin/README/with-icon-set-name_dvwn0g.jpg)
+false | ![showIconSetName set to false](https://res.cloudinary.com/chkilel/image/upload/v1629581580/icones-plugin/README/without-icon-set-name_eynpzq.jpg)
 
 
-### Form field widget `size` option
+### Form field size option
 
 Set the size of the field.
 
 Value | Appearance
 ------------- | -------------
-small | ![small field size](./assets/images/small.jpeg)
-(Defaul if not set) | ![narmal field size](./assets/images/normal.jpeg)
-large | ![large field size](./assets/images/large.jpeg)
+small | ![small field size](https://res.cloudinary.com/chkilel/image/upload/v1629581582/icones-plugin/README/small_afhgob.jpg)
+(Defaul if not set) | ![narmal field size](https://res.cloudinary.com/chkilel/image/upload/v1629581581/icones-plugin/README/normal_jvmooy.jpg)
+large | ![large field size](https://res.cloudinary.com/chkilel/image/upload/v1629581581/icones-plugin/README/large_knqwd6.jpg)
 
 
 
-### Form field widget `iconSets` option
+### Form field iconSets option
 
 For `iconSets` option, you can choose one or more from the possible values below, if not set, the user can choose from all enabled icon sets in the backend settings:
 
@@ -232,17 +249,17 @@ After installation, go to `Backend > Settings >icones` or type **icones** in the
 
 Initially, none of the icon sets is installed, you need to install the icon sets you want to allow the end user to use.
 
-![Setting page](assets/images/setting-page.png)
+![Setting page](https://res.cloudinary.com/chkilel/image/upload/v1629581589/icones-plugin/README/setting-page_s3nxlc.png)
 
 
 - You can enable installed icon sets:
 
-![Disable icon set](assets/images/setting-disabled.png)
+![Disable icon set](https://res.cloudinary.com/chkilel/image/upload/v1629581580/icones-plugin/README/setting-disabled_inqv8q.png)
 
 
 - Disable enabled ones:
 
-![Enable icon set](assets/images/setting-enabled.png)
+![Enable icon set](https://res.cloudinary.com/chkilel/image/upload/v1629581580/icones-plugin/README/setting-enabled_wbst2v.png)
 
 
 - Or completely delete an icon set.
@@ -250,7 +267,7 @@ Initially, none of the icon sets is installed, you need to install the icon sets
 
 > Please note that to delete an icon set, you need to disable it first.
 
- ![Disabled icon sets cannot be deleted](assets/images/setting-cannot-delete-enabled.png)
+ ![Disabled icon sets cannot be deleted](https://res.cloudinary.com/chkilel/image/upload/v1629581586/icones-plugin/README/setting-cannot-delete-enabled_qeuqc5.png)
 
 
 ## Permissions
@@ -259,7 +276,7 @@ The plugin registers two backend permissions to manage Icônes.
 - **Access Icônes settings** : allow the user to enable and/or disable icon sets.
 - **Manage icon sets installation end deletion** : allow the user to install and/or delete icon sets.
 
-![Icône permissions](assets/images/permissions.png)
+![Icône permissions](https://res.cloudinary.com/chkilel/image/upload/v1629581581/icones-plugin/README/permissions_hgnil9.png)
 
 
 
@@ -297,7 +314,7 @@ Examples of usages:
    {{ my_var | iconify({ 'height' => 'auto'}) }}
 
 ```
-#### options
+#### Options detail
 Key | Description | Default | Options
 --- | --- | --- | ---
 class | The css class to apply to the svg tag |  | CSS class to apply
@@ -308,7 +325,7 @@ rotate | Rotation. |  | Value can be in degrees "90deg" (only 90, 180 and 270 ro
 inline | If true, code will include vertical-align style, making it behave like a glyph. | false | true or "true" or "1" (string or boolean),
 color | custom color string to replace currentColor. This is useful when using icon as background image because background image cannot use currentColor |  |
 box | If true, icon will include extra rectangle matching its view box. | false | true or "true" or "1" (string or boolean)
-align | Alignment. This is useful if you have custom width and height set. <br>Unlike other images, SVG keep aspect ratio (unless stated otherwise) when scaled. Value is comma or space separated string with possible strings <br>(example: "left,top,crop"): |  | - left, right, center - horizontal alignment <br>- top, middle, bottom - vertical alignment <br>- crop - crop parts that go outside of boundaries <br>- meet - scale icon down to fit entire icon (opposite of crop)
+align | Alignment. This is useful if you have custom width and height set. Unlike other images, SVG keep aspect ratio (unless stated otherwise) when scaled. Value is comma or space separated string with possible strings (example: "left,top,crop"): |  |  [ left, right, center -> horizontal alignment ], [top, middle, bottom -> vertical alignment], [crop -> crop parts that go outside of boundaries], [meet -> scale icon down to fit entire icon (opposite of crop)]
 
 
 ## Usage in PHP
@@ -334,5 +351,4 @@ icon:
     height: 36
 ```
 
-![iconesthumb Column types with height option](assets/images/column-types-with-height.png)
-
+![iconesthumb Column types with height option](https://res.cloudinary.com/chkilel/image/upload/v1629581582/icones-plugin/README/column-types-with-height_w97fgb.png)
