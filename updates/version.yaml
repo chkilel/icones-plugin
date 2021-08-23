@@ -4,5 +4,5 @@
     - create_icons_table.php
     - seed_icon_sets_table.php
 1.0.1:
-    - 'Refactor mapIcon to accept jsonIcon variable instead of arrayIcon variable''.
+    - 'Refactor mapIcon to accept jsonIcon variable type instead of arrayIcon variable type'
     - 'Fix translation to show why the error occurred'

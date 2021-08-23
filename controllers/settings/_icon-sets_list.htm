@@ -1,22 +1,7 @@
 <?php
-//dd($iconSetsPaginator->count(),
-//    $iconSetsPaginator->currentPage(),
-//    $iconSetsPaginator->total(),
-//    $iconSetsPaginator->url(2),
-//    $iconSetsPaginator->hasMorePages(),
-//    $iconSetsPaginator->lastPage(),
-//    $iconSetsPaginator->nextPageUrl(),
-//    $iconSetsPaginator->perPage(),
-//    $iconSetsPaginator->previousPageUrl(),
-//
-//    ceil($iconSetsPaginator->total() / $iconSetsPaginator->perPage()) ,
-//
-//)
-
-$totalPages = ceil($iconSetsPaginator->total() / $iconSetsPaginator->perPage())
-?>
-<?php $iconSetsWithSamples = $iconSetsPaginator->items() ?>
-
+$totalPages = ceil($iconSetsPaginator->total() / $iconSetsPaginator->perPage());
+ $iconSetsWithSamples = $iconSetsPaginator->items();
+ ?>
 
 <?php foreach ($iconSetsWithSamples as $index => $iconSet): ?>
 
@@ -96,7 +81,6 @@ $totalPages = ceil($iconSetsPaginator->total() / $iconSetsPaginator->perPage())
                 }
                 ?>
 
-
             </select>
 
 
@@ -136,5 +120,3 @@ $totalPages = ceil($iconSetsPaginator->total() / $iconSetsPaginator->perPage())
 
     </div>
 </div>
-
-

@@ -1,27 +1,15 @@
-<?php
-
-//dd($iconSet)
-?>
 <?php //dd($this->user->hasAccess('chkilel.icones.manage_installation')); ?>
-
 
 <div id="test" class="layout-cell min-height theme-thumbnail">
     <div class="thumbnail-container-flex min-height">
-
-        <!--        --><?php //dd($iconSet->display_height) ?>
-
-
         <div class="icon-grid">
             <?php foreach ($iconSet->withTrashedIcons as $index => $icon): ?>
 
                 <span style="border-left: 0px solid #e4e4e4; border-right: 0px solid #e4e4e4; display: flex; justify-content: center; justify-items: center">
                     <?= $icon->toSVG(['height' => $iconSet->display_height * 1.4]); ?>
                 </span>
-
             <?php endforeach ?>
-
         </div>
-
     </div>
 </div>
 
@@ -34,9 +22,7 @@
         </p>
     <?php endif ?>
 
-
     <div class="scoreboard">
-
 
         <div class="scoreboard-item title-value">
             <h4 class=""><?= $iconSet->category; ?></h4>
@@ -71,9 +57,7 @@
                     </svg>
                 <?php endif ?>
             </p>
-
         </div>
-
 
         <?php if ($iconSet->is_installed): ?>
             <?php if ($iconSet->is_enabled): ?>
@@ -97,7 +81,6 @@
                         </svg>
                     </p>
                 </div>
-
             <?php endif; ?>
 
         <?php else: ?>
@@ -108,16 +91,12 @@
                         <path d="M14.8 4.613l6.701 11.161c.963 1.603.49 3.712-1.057 4.71a3.213 3.213 0 0 1-1.743.516H5.298C3.477 21 2 19.47 2 17.581c0-.639.173-1.264.498-1.807L9.2 4.613c.962-1.603 2.996-2.094 4.543-1.096c.428.276.79.651 1.057 1.096zM12 17a1 1 0 1 0 0-2a1 1 0 0 0 0 2zm0-9a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0V9a1 1 0 0 0-1-1z" fill="#c53d2d" />
                     </svg>
                 </p>
-
             </div>
-
         <?php endif; ?>
-
 
         <div class="scoreboard-item title-value">
             <h4>Total icons</h4>
             <p class="number-icon"><?= $iconSet->total; ?></p>
-
             <p class="description">
                 <?php if ($iconSet->version): ?>
                     V<?= $iconSet->version; ?>
@@ -137,10 +116,7 @@
                 <?php endif; ?>
                 <?= $iconSet->license; ?>
             </p>
-
         </div>
-
-
     </div>
 
 
