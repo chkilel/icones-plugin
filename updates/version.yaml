@@ -6,3 +6,5 @@
 1.0.1:
     - 'Refactor mapIcon to accept jsonIcon variable type instead of arrayIcon variable type'
     - 'Fix translation to show why the error occurred'
+1.0.2:
+    - 'Fix a typo in version.yaml preventing installation'
