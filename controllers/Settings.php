@@ -20,7 +20,6 @@ class Settings extends Controller
 
         parent::__construct();
 
-        $this->addCss('/modules/cms/assets/css/october.theme-selector.css', 'core');
         $this->addCss('/plugins/chkilel/icones/controllers/settings/assets/settings.css', 'Chkilel.Icones');
 
         $this->pageTitle = 'chkilel.icones::lang.settings.title';

@@ -8,3 +8,5 @@
     - 'Fix translation to show why the error occurred'
 1.0.2:
     - 'Fix a typo in version.yaml preventing installation'
+1.0.3:
+    - 'Move core CSS to the plugin for better compatibility'
