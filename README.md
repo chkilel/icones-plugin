@@ -5,7 +5,12 @@ One library, over **100,000** vector icons, Modern replacement for icon fonts. F
 
 - **108+** icon sets powered by [Iconify](https://iconify.design/)
 - Browse the icons on [Iconify](https://icon-sets.iconify.design/) or on [Icônes](https://icones.netlify.app/)
-  ![Icônes FormWidget](https://res.cloudinary.com/chkilel/image/upload/v1629581584/icones-plugin/README/iconesfinder-formwidget_h5ap6y.png)
+
+## Demo
+You can check out live demo on [Icones Finder demo](http://vitewind.codersdose.com/icones)
+
+![Icônes FormWidget](https://res.cloudinary.com/chkilel/image/upload/v1629852348/icones-plugin/README/IconesFinder-demo_kyztau.gif)
+
 
 ## Advantages of this form widget
 Every time I use icon fonts, end users don't find them appealing, or even they don't find what they want.
