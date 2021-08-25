@@ -28,6 +28,8 @@ You can use Font Awesome, Material Design Icons, Unicons, Dashicons, Emoji, ... 
 
 # TOC
 - [Installation](#installation)
+  - [From GitHub repository](#from-github-repository)
+  - [Composer](#composer)
 - [How to use](#how-to-use)
 - [Field Options](#field-options)
     - [Form field showName option](#form-field-showName-option)
@@ -44,7 +46,22 @@ You can use Font Awesome, Material Design Icons, Unicons, Dashicons, Emoji, ... 
 
 
 ## Installation
-Simply install the plugin from the marketplace or clone the repository [https://github.com/chkilel/icones-plugin](https://github.com/chkilel/icones-plugin) from GitHub into the plugins folder.
+Simply install the plugin from the marketplace, if you run into problems because of composer dependencies, please use one of the following methods.
+
+### From GitHub repository
+Clone the repository [https://github.com/chkilel/icones-plugin](https://github.com/chkilel/icones-plugin) from GitHub into the plugins folder, then run following commands in the project’s root directory:
+
+```bash
+composer install
+php artisan october:up
+```
+
+### Composer
+If you prefer Composer or you run into problems when installing from the marketplace, run following commands in the project’s root directory:
+```bash
+composer require chkilel/icones-plugin
+php artisan october:up
+```
 
 ## How to use
 Icones registers a new backend form widget named `iconesfinder`.
