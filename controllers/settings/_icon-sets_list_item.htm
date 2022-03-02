@@ -25,7 +25,7 @@
     <div class="scoreboard">
 
         <div class="scoreboard-item title-value">
-            <h4 class=""><?= $iconSet->category; ?></h4>
+            <h4 class=""><?= $iconSet->category?? 'Uncategorized'; ?></h4>
             <p class="svg-container">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="36" height="36" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                     <path d="M18.514 2.23l3.448 3.447a2 2 0 0 1 .463 2.103l-1.763 4.812a1 1 0 0 1-.232.363l-8.323 8.323a2 2 0 0 1-2.829 0l-6.364-6.364a2 2 0 0 1 0-2.828l8.333-8.333a1 1 0 0 1 .364-.232l4.802-1.755a2 2 0 0 1 2.101.464zM15.29 8.904a1.5 1.5 0 1 0 2.12-2.122a1.5 1.5 0 0 0-2.12 2.122z" fill="#34495e" />
@@ -33,9 +33,9 @@
             </p>
         </div>
         <div class="scoreboard-item title-value">
-            <h4 class=""><?= $iconSet->palette; ?></h4>
+            <h4 class=""><?= $iconSet->palette? 'Colourful' : 'Colorless'; ?></h4>
             <p class="svg-container">
-                <?php if (strtolower($iconSet->palette) == 'colorless'): ?>
+                <?php if ($iconSet->palette == 0): ?>
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="36" height="36" preserveAspectRatio="xMidYMid meet" viewBox="0 0 48 48">
                         <path fill="#8CBCD6" d="M40 41H8c-2.2 0-4-1.8-4-4V11c0-2.2 1.8-4 4-4h32c2.2 0 4 1.8 4 4v26c0 2.2-1.8 4-4 4z" />
                         <circle fill="#B3DDF5" cx="35" cy="16" r="3" />
