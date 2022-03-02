@@ -10,3 +10,8 @@
     - 'Fix a typo in version.yaml preventing installation'
 1.0.3:
     - 'Move core CSS to the plugin for better compatibility'
+1.0.4:
+    - Fix author and license properties
+    - Fix icon set palette and category names in settings
+    - 'Update body icon datatype in DB (from `text` to `mediumText`)'
+    - change_body_datatype_in_icons_table.php
