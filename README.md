@@ -6,9 +6,6 @@ One library, over **100,000** vector icons, Modern replacement for icon fonts. F
 - **108+** icon sets powered by [Iconify](https://iconify.design/)
 - Browse the icons on [Iconify](https://icon-sets.iconify.design/) or on [Icônes](https://icones.netlify.app/)
 
-## Demo
-You can check out live demo on [Icones Finder demo](http://vitewind.codersdose.com/icones)
-
 ![Icônes FormWidget](https://res.cloudinary.com/chkilel/image/upload/v1629852348/icones-plugin/README/IconesFinder-demo_kyztau.gif)
 
 
