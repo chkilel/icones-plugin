@@ -57,7 +57,9 @@ class IconSet extends Model
      */
     protected $jsonable = [
         'height',
-        'samples'
+        'samples',
+        'author',
+        'license',
     ];
 
     /**
