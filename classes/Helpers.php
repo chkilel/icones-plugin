@@ -13,7 +13,7 @@ class Helpers
      * @param $perPage
      * @return array
      */
-    public static function searcheIcons($perPage)
+    public static function searcheIcons($perPage = 20)
     {
         // Searched term
         $searchTerm = get('search');
