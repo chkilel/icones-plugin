@@ -15,3 +15,5 @@
     - Fix icon set palette and category names in settings
     - 'Update body icon datatype in DB (from `text` to `mediumText`)'
     - change_body_datatype_in_icons_table.php
+1.0.5:
+    - Fix dependencies version incompatibility

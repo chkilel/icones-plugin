@@ -23,10 +23,10 @@ class SeedIconSetsTable extends Seeder
             $model->id = $prefix;
             $model->name = $iconSet['name'];
             $model->total = $iconSet['total'];
-            $model->author = $iconSet['author']['name'];
-            $model->url = $iconSet['author']['url'] ?? null;
-            $model->license = $iconSet['license']['title'];
-            $model->license_url = $iconSet['license']['url'] ?? null;
+            $model->author = $iconSet['author'];
+            $model->url = $iconSet['url'] ?? null;
+            $model->license = $iconSet['license'];
+            $model->license_url = $iconSet['licenseURL'] ?? null;
             $model->version = $iconSet['version'] ?? null;
             $model->samples = $iconSet['samples'] ?? null;
             $model->palette = $iconSet['palette'] ?? null;
