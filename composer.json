@@ -22,10 +22,15 @@
     "require": {
         "php": ">=7.0",
         "composer/installers": "~1.0",
-        "iconify/json": "^1.1.461",
+        "iconify/json": "^2.1.41",
         "iconify/json-tools": "^1.0"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
     }
 }
