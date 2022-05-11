@@ -8,7 +8,6 @@ One library, over **100,000** vector icons, Modern replacement for icon fonts. F
 
 ![Icônes FormWidget](https://res.cloudinary.com/chkilel/image/upload/v1629852348/icones-plugin/README/IconesFinder-demo_kyztau.gif)
 
-
 ## Advantages of this form widget
 Every time I use icon fonts, end users don't find them appealing, or even they don't find what they want.
 Styling was challenging, with SVG icons you can apply classes and style them as you want.
@@ -24,37 +23,31 @@ You don't need to load any dependency at all.
 You can use Font Awesome, Material Design Icons, Unicons, Dashicons, Emoji, ... and many other icon sets on same page or application using one form widget.
 
 # TOC
-- [Installation](#installation)
-  - [From GitHub repository](#from-github-repository)
-  - [Composer](#composer)
-- [How to use](#how-to-use)
-- [Field Options](#field-options)
-    - [Form field showName option](#form-field-showName-option)
-    - [Form field showIconSetName option](#form-field-showIconSetName-option)
+- [Icônes Form Widget  🪄 🎉 🎊](#icônes-form-widget----)
+  - [Advantages of this form widget](#advantages-of-this-form-widget)
+- [TOC](#toc)
+  - [Installation](#installation)
+    - [Composer](#composer)
+  - [How to use](#how-to-use)
+  - [Field Options](#field-options)
+    - [Form field showName option](#form-field-showname-option)
+    - [Form field showIconSetName option](#form-field-showiconsetname-option)
     - [Form field size option](#form-field-size-option)
-    - [Form field iconSets option](#form-field-iconSets-option)
+    - [Form field iconSets option](#form-field-iconsets-option)
 - [Settings](#settings)
-- [Permissions](#permissions)
-- [Usage in Twig template](#usage-in-twig-template)
+  - [Permissions](#permissions)
+  - [Usage in Twig template](#usage-in-twig-template)
     - [Twig filter options](#twig-filter-options)
-        - [Options detail](#options-detail)
-- [Usage in PHP](#usage-in-php)
-- [Usage in Backend List](#usage-in-backend-list)
+      - [Options detail](#options-detail)
+  - [Usage in PHP](#usage-in-php)
+  - [Usage in Backend List](#usage-in-backend-list)
 
 
 ## Installation
-Simply install the plugin from the marketplace, if you run into problems because of composer dependencies, please use one of the following methods.
-
-### From GitHub repository
-Clone the repository [https://github.com/chkilel/icones-plugin](https://github.com/chkilel/icones-plugin) from GitHub into the plugins folder, then run following commands in the project’s root directory:
-
-```bash
-composer install
-php artisan october:up
-```
+Simply install the plugin from the marketplace, if you run into problems because of composer dependencies, please use composer.
 
 ### Composer
-If you prefer Composer or you run into problems when installing from the marketplace, run following commands in the project’s root directory:
+If you prefer Composer or you run into problems when installing from the marketplace, run the following commands in the project’s root directory:
 ```bash
 composer require chkilel/icones-plugin
 php artisan october:up
