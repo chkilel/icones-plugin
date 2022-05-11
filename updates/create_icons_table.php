@@ -56,7 +56,7 @@ class CreateIconsTable extends Migration
 
             //  Properties for viewBox:
             $table->integer('left'); // Relevant to Alias
-            $table->integer('top'); // // Relevant to Alias
+            $table->integer('top'); // Relevant to Alias
 
             // width and height are dimensions of icon. Value can be string (such as "1em", "24px" or a number).
             //  - If only one dimension is set, another dimension will be set using icon's width/height ratio.
