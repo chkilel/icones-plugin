@@ -10,3 +10,8 @@
     - 'Fix a typo in version.yaml preventing installation'
 1.0.3:
     - 'Move core CSS to the plugin for better compatibility'
+
+1.0.4:
+    - 'Freeze lib dependency `iconify/json` to version 1'
+    - 'Update svg body datatype (from `text` to `mediumText`)'
+    - change_body_datatype_in_icons_table.php
