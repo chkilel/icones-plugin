@@ -22,7 +22,7 @@
     "require": {
         "php": ">=7.0",
         "composer/installers": "~1.0",
-        "iconify/json": "*",
+        "iconify/json": "^1.1.461",
         "iconify/json-tools": "^1.0"
     },
     "require-dev": {
