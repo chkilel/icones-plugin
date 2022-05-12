@@ -16,3 +16,6 @@
     - change_body_datatype_in_icons_table.php
 1.0.5:
     - Fix error "php artisan optimize" cached Route
+2.0.0:
+    - 'Upgrade `iconify/icon-sets` to version 2'
+    - upgrade_icon_sets_table.php
