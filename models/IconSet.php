@@ -50,6 +50,7 @@ class IconSet extends Model
     protected $casts = [
         'is_enabled' => 'boolean',
         'is_installed' => 'boolean',
+        'palette' => 'boolean',
     ];
 
     /**

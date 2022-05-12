@@ -3,7 +3,7 @@ Access thousands of SVG icons as a backend form widget.
 
 One library, over **100,000** vector icons, Modern replacement for icon fonts. Fast, easy to use.
 
-- **108+** icon sets powered by [Iconify](https://iconify.design/)
+- **128+** icon sets powered by [Iconify](https://iconify.design/)
 - Browse the icons on [Iconify](https://icon-sets.iconify.design/) or on [Icônes](https://icones.netlify.app/)
 
 ![Icônes FormWidget](https://res.cloudinary.com/chkilel/image/upload/v1629852348/icones-plugin/README/IconesFinder-demo_kyztau.gif)
@@ -26,6 +26,7 @@ You can use Font Awesome, Material Design Icons, Unicons, Dashicons, Emoji, ... 
 - [Icônes Form Widget  🪄 🎉 🎊](#icônes-form-widget----)
   - [Advantages of this form widget](#advantages-of-this-form-widget)
 - [TOC](#toc)
+  - [Upgrading from version 1.* 🚨](#upgrading-from-version-1-)
   - [Installation](#installation)
     - [Composer](#composer)
   - [How to use](#how-to-use)
@@ -42,6 +43,22 @@ You can use Font Awesome, Material Design Icons, Unicons, Dashicons, Emoji, ... 
   - [Usage in PHP](#usage-in-php)
   - [Usage in Backend List](#usage-in-backend-list)
 
+
+## Upgrading from version 1.* 🚨
+
+Icônes Form Widget 2.0 depend on version 2 of [Iconify Icon Sets](https://github.com/iconify/icon-sets).
+If you are upgrading from version 1.* , you need to upgrade your Iconify Icon Sets to version 2.* also.
+For that, run the following command in the root of your project:
+
+```bash
+composer require chkilel/icones-plugin:dev-next --with-all-dependencies
+# --with-all-dependencies will upgrade all dependencies also
+```
+then migrate the database:
+
+```bash
+php artisan october:up
+```
 
 ## Installation
 Simply install the plugin from the marketplace, if you run into problems because of composer dependencies, please use composer.
