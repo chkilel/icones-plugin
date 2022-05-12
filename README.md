@@ -51,7 +51,7 @@ If you are upgrading from version 1.* , you need to upgrade your Iconify Icon Se
 For that, run the following command in the root of your project:
 
 ```bash
-composer require chkilel/icones-plugin:dev-next --with-all-dependencies
+composer require chkilel/icones-plugin --with-all-dependencies
 # --with-all-dependencies will upgrade all dependencies also
 ```
 then migrate the database:
