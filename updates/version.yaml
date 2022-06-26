@@ -19,3 +19,5 @@
 2.0.0:
     - 'Upgrade `iconify/icon-sets` to version 2'
     - upgrade_icon_sets_table.php
+3.0.0:
+    - 'OCMS 3 compatible version'
