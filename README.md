@@ -1,7 +1,15 @@
 # Icônes Form Widget  🪄 🎉 🎊
+
+[📖 **Release Notes**]
+
+>ℹ️ **Plugin version 3 is compatible only with Octobercms 3 (New Ajax framwork and the backend upgrade to bootstrap 5), please use version 2 of the plugin for OCMS 1 and 2.**
+> **You cannot upgrade from version `1.*/2.*` to `3.*`**
+
+---
+<br />
 Access thousands of SVG icons as a backend form widget.
 
-One library, over **100,000** vector icons, Modern replacement for icon fonts. Fast, easy to use.
+One library, over **133,000** vector icons, Modern replacement for icon fonts. Fast, easy to use.
 
 - **128+** icon sets powered by [Iconify](https://iconify.design/)
 - Browse the icons on [Iconify](https://icon-sets.iconify.design/) or on [Icônes](https://icones.netlify.app/)
@@ -22,11 +30,13 @@ You don't need to load any dependency at all.
 
 You can use Font Awesome, Material Design Icons, Unicons, Dashicons, Emoji, ... and many other icon sets on same page or application using one form widget.
 
-# TOC
+<br />
+
+**TOC**
+
 - [Icônes Form Widget  🪄 🎉 🎊](#icônes-form-widget----)
   - [Advantages of this form widget](#advantages-of-this-form-widget)
-- [TOC](#toc)
-  - [Upgrading from version 1.* 🚨](#upgrading-from-version-1-)
+  - [Upgrading from version `1.*` to `2.*` 🚨](#upgrading-from-version-1-to-2-)
   - [Installation](#installation)
     - [Composer](#composer)
   - [How to use](#how-to-use)
@@ -44,7 +54,7 @@ You can use Font Awesome, Material Design Icons, Unicons, Dashicons, Emoji, ... 
   - [Usage in Backend List](#usage-in-backend-list)
 
 
-## Upgrading from version 1.* 🚨
+## Upgrading from version `1.*` to `2.*` 🚨
 
 Icônes Form Widget 2.0 depend on version 2 of [Iconify Icon Sets](https://github.com/iconify/icon-sets).
 If you are upgrading from version 1.* , you need to upgrade your Iconify Icon Sets to version 2.* also.
@@ -66,7 +76,10 @@ Simply install the plugin from the marketplace, if you run into problems because
 ### Composer
 If you prefer Composer or you run into problems when installing from the marketplace, run the following commands in the project’s root directory:
 ```bash
-composer require chkilel/icones-plugin
+composer require chkilel/icones-plugin:^2.0.0 # For Octobercms 1 and 2
+# ℹ️ OR
+composer require chkilel/icones-plugin:^3.0.0 # For Octobercms 3
+# Then
 php artisan october:up
 ```
 
@@ -161,23 +174,29 @@ large | ![large field size](https://res.cloudinary.com/chkilel/image/upload/v162
 For `iconSets` option, you can choose one or more from the possible values below, if not set, the user can choose from all enabled icon sets in the backend settings:
 
 Possible values |Icon set real name |Total icons
-------------- | ------------- | --------------
-akar-icons|Akar Icons|363
-ant-design|Ant Design Icons|788
-bi|Bootstrap Icons|1386
+------------- | ------------- | --------------:
+academicons|Academicons|149
+akar-icons|Akar Icons|398
+ant-design|Ant Design Icons|789
+arcticons|Arcticons|4304
+bi|Bootstrap Icons|1668
 bpmn|BPMN|112
-brandico|Brandico Font|45
-bx|BoxIcons|1525
+brandico|Brandico|45
+bx|BoxIcons|797
+bxl|BoxIcons Logo|153
+bxs|BoxIcons Solid|650
 bytesize|Bytesize Icons|101
-carbon|Carbon|1840
+carbon|Carbon|1798
+charm|Charm Icons|255
 ci|coolicons|412
 cib|CoreUI Brands|830
 cif|CoreUI Flags|199
 cil|CoreUI Free|554
-clarity|Clarity|1096
-codicon|Codicons|374
+circle-flags|Circle Flags|349
+clarity|Clarity|1103
+codicon|Codicons|413
 cryptocurrency|Cryptocurrency Icons|471
-dashicons|Dashicons|343
+dashicons|Dashicons|342
 ei|Evil Icons|70
 el|Elusive Icons|304
 emojione|Emoji One (Colored)|1834
@@ -185,76 +204,90 @@ emojione-monotone|Emoji One (Monotone)|1403
 emojione-v1|Emoji One (v1)|1262
 entypo|Entypo+|321
 entypo-social|Entypo+ Social|76
-eos-icons|EOS Icons|239
+eos-icons|EOS Icons|253
+ep|Element Plus|283
 et|Elegant|100
 eva|Eva Icons|490
 fa|Font Awesome 4|678
 fa-brands|Font Awesome 5 Brands|457
 fa-regular|Font Awesome 5 Regular|151
 fa-solid|Font Awesome 5 Solid|1001
+fa6-brands|Font Awesome Brands|462
+fa6-regular|Font Awesome Regular|162
+fa6-solid|Font Awesome Solid|1387
 fad|FontAudio|155
 fe|Feather Icon|255
 feather|Feather Icons|286
-file-icons|File Icons|929
+file-icons|File Icons|930
+flag|Flag Icons|530
+flagpack|Flagpack|255
 flat-color-icons|Flat Color Icons|329
 flat-ui|Flat UI Icons|100
-fluent|Fluent UI System Icons|8566
+fluent|Fluent UI System Icons|11468
 fontelico|Fontelico|34
 fontisto|Fontisto|615
 foundation|Foundation|283
 fxemoji|Firefox OS Emoji|1034
+gala|Gala Icons|51
 geo|GeoGlyphs|30
 gg|css.gg|704
-gis|Font-GIS|336
+gis|Font-GIS|344
 gridicons|Gridicons|201
 grommet-icons|Grommet Icons|614
-healthicons|Health Icons|1485
+healthicons|Health Icons|1731
 heroicons-outline|HeroIcons Outline|230
 heroicons-solid|HeroIcons Solid|230
-ic|Google Material Icons|9520
+ic|Google Material Icons|10945
 icomoon-free|IcoMoon Free|491
-icon-park|IconPark|2422
-icon-park-outline|IconPark Outline|2422
-iconoir|Iconoir|941
+icon-park|IconPark|2657
+icon-park-outline|IconPark Outline|2657
+icon-park-solid|IconPark Solid|1937
+icon-park-twotone|IconPark TwoTone|1915
+iconoir|Iconoir|1151
 icons8|Icons8 Windows 10 Icons|234
 il|Icalicons|84
 ion|IonIcons|1332
 iwwa|Innowatio Font|105
 jam|Jam Icons|940
 la|Line Awesome|1544
-line-md|Material Line Icons|250
-logos|SVG Logos|1236
+line-md|Material Line Icons|298
+logos|SVG Logos|1438
 ls|Ligature Symbols|348
-lucide|Lucide|491
-majesticons|Majesticons|420
-maki|Maki|204
+lucide|Lucide|625
+majesticons|Majesticons|760
+maki|Maki|208
 map|Map Icons|167
-mdi|Material Design Icons|6031
+material-symbols|Material Symbols|8001
+mdi|Material Design Icons|7001
 mdi-light|Material Design Light|267
 medical-icon|Medical Icons|144
 mi|Mono Icons|180
 mono-icons|Mono Icons|180
-noto|Noto Emoji|3310
+nimbus|Nimbus|135
+noto|Noto Emoji|3418
 noto-v1|Noto Emoji (v1)|2157
-octicon|Octicons|454
+octicon|Octicons|506
 oi|Open Iconic|223
-openmoji|OpenMoji|3914
-pepicons|Pepicons|316
-ph|Phosphor|5206
-pixelarticons|Pixelarticons|460
+ooui|OOUI|322
+openmoji|OpenMoji|4053
+pepicons|Pepicons|410
+ph|Phosphor|6282
+pixelarticons|Pixelarticons|474
+prime|Prime Icons|238
 ps|PrestaShop Icons|479
-radix-icons|Radix Icons|297
+quill|Quill Icons|140
+radix-icons|Radix Icons|318
 raphael|Raphael|266
 ri|Remix Icon|2271
-si-glyph|SmartIcons Glyph|800
-simple-icons|Simple Icons|1992
+si-glyph|SmartIcons Glyph|799
+simple-icons|Simple Icons|2263
 simple-line-icons|Simple line icons|189
 subway|Subway Icon Set|306
-system-uicons|System UIcons|420
-tabler|Tabler Icons|1298
+system-uicons|System UIcons|430
+tabler|Tabler Icons|2016
 teenyicons|Teenyicons|1200
 topcoat|TopCoat Icons|89
-twemoji|Twitter Emoji|3556
+twemoji|Twitter Emoji|3668
 typcn|Typicons|336
 uil|Unicons|1206
 uim|Unicons Monochrome|296
@@ -263,14 +296,14 @@ uit|Unicons Thin Line|214
 uiw|uiw icons|214
 vaadin|Vaadin Icons|636
 vs|Vesper Icons|159
-vscode-icons|VSCode Icons|1084
+vscode-icons|VSCode Icons|1139
 websymbol|Web Symbols Liga|85
 whh|WebHostingHub Glyphs|2125
-wi|Weather Icons|228
+wi|Weather Icons|219
 wpf|Icons8 Windows 8 Icons|200
 zmdi|Material Design Iconic Font|777
 zondicons|Zondicons|297
-<span>| **Total icons for all icon sets**|**102 443**
+<span>| **Total icons for all icon sets**|**133 348**
 
 
 # Settings
