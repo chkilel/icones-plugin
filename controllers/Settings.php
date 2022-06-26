@@ -38,13 +38,12 @@ class Settings extends Controller
 
     public function index()
     {
-
         $this->bodyClass = 'compact-container';
         $this->vars['iconSetsPaginator'] = $this->iconSetsPaginator(1);
     }
 
     /**
-     * Handler for installing icon set
+     * Handler for installing iconset
      * @return array|void
      * @throws \SystemException
      */
@@ -171,7 +170,6 @@ class Settings extends Controller
             $query->where('is_installed', true);
         }
 
-        // TODO paginate
         // Active ones first ordred by name
         $iconSetsPaginator = $query
             ->orderBy('is_enabled', 'desc')
