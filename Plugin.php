@@ -57,21 +57,20 @@ class Plugin extends PluginBase
 
 
     /**
-     * @param $value the JSON value on which the filter is applied
+     * @param $value the Array value on which the filter is applied
      * @param $props associative array with the folowing possible keys (see REEDME.md):
      * 'class','width', 'height', 'inline', 'hFlip', 'vFlip', 'flip', 'rotate', 'align', 'color', 'box'
      * @return string SVG icon
      * @throws ApplicationException
      */
-    public function iconify($jsonIcon, $props = [])
+    public function iconify($iconArray, $props = [])
     {
-        $icon = new JsonIcon($jsonIcon);
+        $icon = new JsonIcon($iconArray);
         return $icon->iconify($props);
     }
 
-
     /**
-     * @param $value the JSON representation of the icon
+     * @param $value the Array representation of the icon
      * @param $column column definition object
      * @param $record  model record object.
      * @return string SVG icon

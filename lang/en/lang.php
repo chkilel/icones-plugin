@@ -5,7 +5,7 @@
     ],
     'formwidgets' => [
         'placeholder' => '-- Choose an icon --',
-        'error_wrong_variable_type' => 'Iconify filter can only be applied to variable of type Icones, the given variable [:variable] is of type [:type]',
+        'error_wrong_variable_type' => 'Iconify filter can only be applied on a variable of type Icones, the given variable [:variable] is of type [:type]',
     ],
     'settings' => [
         'title' => 'Icônes',
@@ -24,7 +24,7 @@
         'flash_deleted' => 'The Icon Set was deleted succesfully',
         'flash_installed' => 'The Icon Set was installed succesfully',
         'flash_error_installation' => 'Something wrong happened, Icon Set was not installed',
-        'scroll_to_top' =>'Scroll to the top'
+        'scroll_to_top' =>'To the top'
     ],
     'permission' => [
         'manage_tab' => 'Icônes',

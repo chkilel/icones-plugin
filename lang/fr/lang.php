@@ -5,7 +5,7 @@
     ],
     "formwidgets" => [
         "placeholder" => "-- Choisir une icône --",
-        "error_wrong_variable_type" => "Le filtre Twig iconify doit être appliqué a une variable de type Icones, la variable [:variable] est de type [:type]",
+        "error_wrong_variable_type" => "Le filtre Twig iconify doit être appliqué sur une variable de type Icones, la variable [:variable] est de type [:type]",
     ],
     "settings" => [
         "title" => "Icônes",
@@ -24,7 +24,7 @@
         "flash_deleted" => "La librairie d'icônes est supprimées corrêctement",
         "flash_installed" => "L'installation est terminées avec succès",
         "flash_error_installation" => "Une ereur est survenue, la librairie d'icônes n'est pas installées",
-        "scroll_to_top" =>"Défiler vers le haut"
+        "scroll_to_top" =>"Vers le haut"
     ],
     "permission" => [
         "manage_tab" => "Icônes",

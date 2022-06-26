@@ -1,0 +1,101 @@
+<?php $totalPages = ceil($iconSetsPaginator->total() / $iconSetsPaginator->perPage()); ?>
+
+<div class="mb-5">
+    <div class="row align-items-center">
+        <div class="col">
+            <span class="">
+
+                Records:
+                <span class="badge rounded-pill bg-secondary lh-base">
+                <?= ($iconSetsPaginator->currentPage() - 1) * $iconSetsPaginator->perPage() + 1 ?>
+                -
+                <?= $iconSetsPaginator->currentPage() * $iconSetsPaginator->perPage() ?>
+                </span>
+                of
+                <span class="badge rounded-pill bg-secondary lh-base">
+                <?= $iconSetsPaginator->total() ?>
+                </span>
+
+
+            </span>
+        </div>
+        <div class="col-6 d-flex justify-content-center">
+            <div class="btn-group" role="group" aria-label="Pagination">
+
+                <!-- First and previous -->
+                <?php if ($iconSetsPaginator->currentPage() === 1) : ?>
+                    <button aria-label="First page" type="button" class="btn btn-default disabled">
+                        <span aria-hidden="true" class="icon-angle-double-left"></span>
+                    </button>
+                    <button aria-label="Previous page" type="button" class="btn btn-default disabled">
+                        <span aria-hidden="true" class="icon-angle-left"></span>
+                    </button>
+                <?php else : ?>
+                    <button title="First page" aria-label="First page" data-request="onPaginate" data-request-data="page: 1" data-request-loading=".loading-indicator" data-request-success="scrollToTop()" type="button" class="btn btn-default">
+                        <span aria-hidden="true" class="icon-angle-double-left"></span>
+                    </button>
+                    <button title="Previous page" aria-label="Previous page" data-request="onPaginate" data-request-data="page: <?= $iconSetsPaginator->currentPage() - 1 ?>" data-request-loading=".loading-indicator" data-request-success="scrollToTop()" type="button" class="btn btn-default">
+                        <span aria-hidden="true" class="icon-angle-double-left"></span>
+                    </button>
+                <?php endif ?>
+                <!-- END First and previous -->
+
+                <button type="button" class="btn bg-primary text-white fw-bold" data-bs-toggle="dropdown" aria-expanded="false">
+                    Page
+                    <?= $iconSetsPaginator->currentPage() ?> &nbsp;&nbsp;&nbsp;
+                    <i class="icon-chevron-down"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <?php
+                    for ($x = 1; $x <= $totalPages; $x++) {
+                        $selected = $x === $iconSetsPaginator->currentPage() ? 'active' : null;
+
+                        $item = <<<ITEM
+                                        <li>
+                                            <a
+                                                href='javascript:;'
+                                                class='dropdown-item $selected'
+                                                data-request='onPaginate'
+                                                data-request-data='page: $x'
+                                                data-request-loading='.loading-indicator'
+                                                data-request-success='scrollToTop()'
+                                            >
+                                                $x
+                                            </a>
+                                        </li>
+                                ITEM;
+
+                        echo $item;
+                    } ?>
+                </ul>
+
+                <!-- Last and next -->
+                <?php if ($iconSetsPaginator->currentPage() === $iconSetsPaginator->lastPage()) : ?>
+                    <button aria-label="Last page" type="button" class="btn btn-default disabled">
+                        <span aria-hidden="true" class="icon-angle-right"></span>
+                    </button>
+                    <button aria-label="Next page" type="button" class="btn btn-default disabled">
+                        <span aria-hidden="true" class="icon-angle-double-right"></span>
+                    </button>
+                <?php else : ?>
+                    <button title="Next page" aria-label="Next page" data-request="onPaginate" data-request-data="page: <?= $iconSetsPaginator->currentPage() + 1 ?>" data-request-loading=".loading-indicator" data-request-success="scrollToTop()" type="button" class="btn btn-default">
+                        <span aria-hidden="true" class="icon-angle-right"></span>
+                    </button>
+                    <button title="page-last" aria-label="Last page" data-request="onPaginate" data-request-data="page: <?= $iconSetsPaginator->lastPage() ?>" data-request-loading=".loading-indicator" data-request-success="scrollToTop()" type="button" class="btn btn-default">
+                        <span aria-hidden="true" class="icon-angle-double-right"></span>
+                    </button>
+                <?php endif ?>
+                <!-- END Last and next -->
+            </div>
+        </div>
+        <!-- SELECT PAGE -->
+        <div class="col d-flex justify-content-end ">
+
+            <button type="button" id="scroll_To_Top" href='javascript:void(0)' onclick="scrollToTop()" class="btn btn-default">
+                <i class="oc-icon-arrow-circle-up"></i>
+                <?= e(trans('chkilel.icones::lang.settings.scroll_to_top')) ?>
+            </button>
+
+        </div>
+    </div>
+</div>

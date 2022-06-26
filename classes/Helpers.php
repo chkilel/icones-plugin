@@ -122,7 +122,7 @@ class Helpers
 
 
         // For optimal seeding, because number of icons can be huge
-        $chunks = array_chunk($iconsToSave, 500);
+        $chunks = array_chunk($iconsToSave, 200);
 
         foreach ($chunks as $chunk) {
             Icon::insert($chunk);
@@ -131,26 +131,24 @@ class Helpers
     }
 
     /**
-     * Mape a JSON representation of icon's attributes to an Icon model
-     * @param $jsonIcon
+     * Mape the arry representation of icon's attributes to an Icon model
+     * @param $iconArray
      * @return Icon
      */
-    public static function mapIcon($jsonIcon)
+    public static function mapIcon($iconArray)
     {
         $keys = [
-            "id", "icon_set_id", "name", "parent", "icon_set_name", "body", "hidden",
+            "id", "icon_set_id", "name", "parent", "icon_set_name", "readable_name", "body", "hidden",
             "left", "top", "width", "height", "rotate", "hFlip", "vFlip",
             "inlineTop", "inlineHeight", "verticalAlign"
         ];
 
-        // We check if the given value is a Json representation of an icon.
-        $iconArray = json_decode($jsonIcon, true) ?? [];
-//        dd($iconArray,$jsonIcon, gettype($jsonIcon) );
+        // We check if the given value is an Array  representation of an icon.
         $iconArrayKeys = array_keys($iconArray);
         $isIcon = count(array_diff($keys, $iconArrayKeys)) == 0;
 
         if ($isIcon) {
-            //Although we could grab the model by its Id,  We construct the object from the Json,
+            //Although we could grab the model by its Id,  We construct the object from the array,
             // in case the icon is no more in DB if the icon set is deleted for example
             $icon = new Icon();
             foreach ($iconArray as $key => $attribute) {
@@ -158,8 +156,8 @@ class Helpers
             }
         } else {
             throw new ApplicationException(trans("chkilel.icones::lang.formwidgets.error_wrong_variable_type", [
-                'variable' => $jsonIcon,
-                'type' =>gettype($jsonIcon),
+                'variable' => $iconArray,
+                'type' =>gettype($iconArray),
             ]));
         }
 

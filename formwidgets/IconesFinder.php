@@ -116,12 +116,12 @@ class IconesFinder extends FormWidgetBase
 
         // To manage the case where the form is saved but the icon is no more in the DB;
         // for example the icon set is deleted.
-        // We reuse the existing value stored as JSON, otherwise we will be calling toJSON on null
+        // We reuse the existing value stored as Jsonable array, otherwise we will be calling toArray on null
         $serialized = $this->formField->value;
 
         $icon = Icon::find($value);
         if ($icon != null) {
-            $serialized = $icon->toJSON();
+            $serialized = $icon->toArray();
         }
 
         return $serialized;
@@ -146,7 +146,7 @@ class IconesFinder extends FormWidgetBase
     }
 
     /**
-     * Return the class to adjust the size of th fied
+     * Return the class to adjust the size of the field
      *
      * @param $size small|large
      * @return string
