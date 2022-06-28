@@ -117,6 +117,9 @@ class Helpers
             $iconData['created_at'] = now()->toDateTimeString();
             $iconData['updated_at'] = now()->toDateTimeString();
 
+            // Not used in DB
+            unset($iconData['lastModified']);
+
             $iconsToSave[] = $iconData;
         }
 

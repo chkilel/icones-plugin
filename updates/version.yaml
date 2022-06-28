@@ -21,3 +21,5 @@
     - upgrade_icon_sets_table.php
 3.0.0:
     - 'OCMS 3 compatible version'
+3.0.1:
+    - 'Fix DB erro when installing Iconset'
