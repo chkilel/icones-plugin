@@ -1,18 +1,12 @@
-<?php $iconSetsWithSamples = $iconSetsPaginator->items(); ?>
+<?php $iconSetsWithSamples = $iconSetsPaginator->items(); ?> <?php foreach ($iconSetsWithSamples as
+$index => $iconSet) : ?> <?php $active = $iconSet->isEnabled() ? ' active' : null; $installed =
+$iconSet->isInstalled() && !$iconSet->isEnabled() ? ' installed' : null ?>
 
-<?php foreach ($iconSetsWithSamples as $index => $iconSet) : ?>
-
-    <?php
-    $active = $iconSet->isEnabled() ? ' active' : null;
-    $installed = $iconSet->isInstalled() && !$iconSet->isEnabled() ? ' installed' : null
-    ?>
-
-    <div id="themeListItem-<?= $iconSet->id ?>" class="layout-row min-size <?= $active . $installed ?>">
-        <?= $this->makePartial('icon-sets_list_item', ['iconSet' => $iconSet]) ?>
-    </div>
+<div id="themeListItem-<?= $iconSet->id ?>" class="layout-row min-size <?= $active . $installed ?>">
+    <?= $this->makePartial('icon-sets_list_item', ['iconSet' => $iconSet]) ?>
+</div>
 
 <?php endforeach ?>
-
 
 <div class="layout-row links">
     <div class="layout-cell theme-thumbnail">
@@ -21,7 +15,7 @@
 
     <div class="layout-cell theme-description m-b-lg">
         <div class="loading-indicator-container">
-            <div class="loading-indicator indicator-center" style="display: none;">
+            <div class="loading-indicator indicator-center" style="display: none">
                 <span></span>
             </div>
         </div>
@@ -32,5 +26,4 @@
         </div>
         <!-- END Pagination -->
     </div>
-
 </div>

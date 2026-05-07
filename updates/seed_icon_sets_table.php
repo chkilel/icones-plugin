@@ -1,8 +1,10 @@
-<?php namespace Chkilel\Icones\Updates;
+<?php
+
+namespace Chkilel\Icones\Updates;
 
 use Chkilel\Icones\Models\IconSet;
 use Iconify\IconsJSON\Finder;
-use Seeder;
+use October\Rain\Database\Updates\Seeder;
 
 class SeedIconSetsTable extends Seeder
 {
@@ -13,18 +15,14 @@ class SeedIconSetsTable extends Seeder
 
     public function createIconSets(): void
     {
-        // Load all collections' information from "collections-json" library
-        // https://github.com/icones/collections-json/blob/master/collections.json
         $iconSets = Finder::collections();
 
         foreach ($iconSets as $prefix => $iconSet) {
-            $model = new IconSet();
+            $model = new IconSet;
 
             $model->id = $prefix;
             $model->name = $iconSet['name'];
             $model->total = $iconSet['total'];
-
-
             $model->author = $iconSet['author']['name'];
             $model->url = $iconSet['author']['url'] ?? null;
             $model->license = $iconSet['license']['title'];

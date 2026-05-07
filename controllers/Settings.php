@@ -1,4 +1,6 @@
-<?php namespace Chkilel\Icones\Controllers;
+<?php
+
+namespace Chkilel\Icones\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
@@ -9,7 +11,6 @@ use System\Classes\SettingsManager;
 
 class Settings extends Controller
 {
-
     public $requiredPermissions = ['chkilel.icones.access_settings'];
 
     /**
@@ -20,7 +21,7 @@ class Settings extends Controller
 
         parent::__construct();
 
-        $this->addCss('/plugins/chkilel/icones/controllers/settings/assets/settings.css', 'Chkilel.Icones');
+        $this->addCss('/plugins/chkilel/icones/assets/settings.css');
 
         $this->pageTitle = 'chkilel.icones::lang.settings.title';
         BackendMenu::setContext('October.System', 'system', 'settings');
@@ -30,7 +31,7 @@ class Settings extends Controller
          * Custom redirect for unauthorized request
          */
         $this->bindEvent('page.beforeDisplay', function () {
-            if (!$this->user->hasAccess('chkilel.icones.access_settings')) {
+            if (! $this->user->hasAccess('chkilel.icones.access_settings')) {
                 return Backend::redirect('backend/system/settings');
             }
         });
@@ -44,7 +45,9 @@ class Settings extends Controller
 
     /**
      * Handler for installing iconset
+     *
      * @return array|void
+     *
      * @throws \SystemException
      */
     public function index_onInstall()
@@ -60,8 +63,9 @@ class Settings extends Controller
             $iconSet->save();
             \Flash::success(trans('chkilel.icones::lang.settings.flash_installed'));
             $this->vars['iconSetsPaginator'] = $this->iconSetsPaginator(1);
+
             return [
-                '#icon-sets-list' => $this->makePartial('icon-sets_list')
+                '#icon-sets-list' => $this->makePartial('icon-sets_list'),
             ];
         } else {
             \Flash::error(trans('chkilel.icones::lang.settings.flash_error_installation'));
@@ -70,6 +74,7 @@ class Settings extends Controller
 
     /**
      * @return array|void
+     *
      * @throws \SystemException
      */
     public function index_onDelete()
@@ -84,8 +89,9 @@ class Settings extends Controller
 
             $this->vars['iconSetsPaginator'] = $this->iconSetsPaginator(1);
             \Flash::success(trans('chkilel.icones::lang.settings.flash_deleted'));
+
             return [
-                '#icon-sets-list' => $this->makePartial('icon-sets_list')
+                '#icon-sets-list' => $this->makePartial('icon-sets_list'),
             ];
         } else {
             \Flash::error(trans('chkilel.icones::lang.settings.flash_error_deletion'));
@@ -94,6 +100,7 @@ class Settings extends Controller
 
     /**
      * @return array|void
+     *
      * @throws \SystemException
      */
     public function index_onEnable()
@@ -104,15 +111,15 @@ class Settings extends Controller
             ->where('icon_set_id', $prefix)
             ->restore();
 
-
         if ($restoredRows > 0) {
             $iconSet = IconSet::find($prefix);
             $iconSet->is_enabled = true;
             $iconSet->save();
             $this->vars['iconSetsPaginator'] = $this->iconSetsPaginator(1);
             \Flash::success(trans('chkilel.icones::lang.settings.flash_enabled'));
+
             return [
-                '#icon-sets-list' => $this->makePartial('icon-sets_list')
+                '#icon-sets-list' => $this->makePartial('icon-sets_list'),
             ];
         } else {
             \Flash::error(trans('chkilel.icones::lang.settings.flash_error_enabling'));
@@ -121,6 +128,7 @@ class Settings extends Controller
 
     /**
      * @return array|void
+     *
      * @throws \SystemException
      */
     public function index_onDisable()
@@ -136,25 +144,25 @@ class Settings extends Controller
             $iconSet->save();
             $this->vars['iconSetsPaginator'] = $this->iconSetsPaginator(1);
             \Flash::success(trans('chkilel.icones::lang.settings.flash_disabled'));
+
             return [
-                '#icon-sets-list' => $this->makePartial('icon-sets_list')
+                '#icon-sets-list' => $this->makePartial('icon-sets_list'),
             ];
         } else {
             \Flash::error(trans('chkilel.icones::lang.settings.flash_error_disabling'));
         }
     }
 
-
     public function onPaginate()
     {
         $page = post('page');
 
         $this->vars['iconSetsPaginator'] = $this->iconSetsPaginator($page);
+
         return [
-            '#icon-sets-list' => $this->makePartial('icon-sets_list')
+            '#icon-sets-list' => $this->makePartial('icon-sets_list'),
         ];
     }
-
 
     public function iconSetsPaginator($page)
     {
@@ -185,6 +193,7 @@ class Settings extends Controller
                 if ($value->withTrashedIcons->count() > 0) {
                     $value->withTrashedIcons = $value->withTrashedIcons->random(9);
                 }
+
                 return $value;
             });
         });

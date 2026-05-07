@@ -1,7 +1,6 @@
-<?php namespace Chkilel\Icones;
+<?php
 
 use Chkilel\Icones\Classes\Helpers;
+use Illuminate\Support\Facades\Route;
 
-use Route;
-
-Route::get('icons', Helpers::class.'@searcheIcons');
+Route::middleware(['web'])->get('icons', Helpers::class.'@searcheIcons');

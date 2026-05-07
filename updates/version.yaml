@@ -22,9 +22,16 @@
 3.0.0:
     - 'OCMS 3 compatible version'
 3.0.1:
-    - 'Fix DB erro when installing Iconset'
+    - 'Fix DB error when installing Iconset'
 3.1.0:
     - 'Fix Select2 initial value and clearing functionality'
     - 'Add select2:clear event handler to allow icon deselection'
     - 'Improve HTML escaping for security'
     - 'Add templateResult and templateSelection for consistent display'
+4.0.0:
+    - 'October CMS v4 compatible version'
+    - 'Add PHP 8.2+ requirement and Laravel 12 support'
+    - 'Fix Twig output escaping for iconify filter (raw SVG output)'
+    - 'Use modern anonymous class migrations'
+    - 'Protect icon search route with web middleware'
+    - 'Update composer/installers to ~2.0'
