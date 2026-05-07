@@ -1,16 +1,17 @@
-<?php namespace Chkilel\Icones\Classes;
+<?php
 
+namespace Chkilel\Icones\Classes;
+
+use ApplicationException;
 use Chkilel\Icones\Models\Icon;
 use Chkilel\Icones\Models\IconSet;
-use ApplicationException;
 use Iconify\JSONTools\Collection as IconifyCollection;
 
 class Helpers
 {
-
     /**
      * Results returned for the searched term,
-     * @param $perPage
+     *
      * @return array
      */
     public static function searcheIcons($perPage = 20)
@@ -48,7 +49,6 @@ class Helpers
             ->with('iconSet')
             ->simplePaginate($perPage);
 
-
         // Select2 pagination ("infinite scrolling") for remote data sources
         // needs an object with 'results' and  'pagination'
         // Here we construct the results, and we return it beside the pagination parameter
@@ -57,34 +57,33 @@ class Helpers
         foreach ($paginator->Items() as $index => $icon) {
             // If icon is hidden. That means icon was removed from collection for some reason,
             // but it is kept in JSON file to prevent applications that rely on old icon from breaking
-            if (!$icon->hidden) {
+            if (! $icon->hidden) {
                 $icon['svg'] = $icon->toSVG([
                     'height' => Helpers::setSvgHeight($fieldSize),
                     'inline' => true]);
-                $icon['readable_name'] = $showName ?  $icon['name']: '' ;
-                $icon['icon_set_name'] = $showIconSetName ?  $icon['icon_set_name']: '' ;
+                $icon['readable_name'] = $showName ? $icon['name'] : '';
+                $icon['icon_set_name'] = $showIconSetName ? $icon['icon_set_name'] : '';
                 $results[$index] = $icon;
             }
         }
 
         return [
             'results' => $results,
-            'pagination' => ['more' => $paginator->hasMorePages()]
+            'pagination' => ['more' => $paginator->hasMorePages()],
         ];
     }
-
 
     /**
      * Seed Icons for a specific Icon Set, used in the backend settings.
      *
-     * @param $prefix String icon set name abbreviation
+     * @param  $prefix  String icon set name abbreviation
      * @return bool to confirm seeding ok
      */
     public static function installIconSet($prefix)
     {
         $iconsToSave = [];
 
-        $iconSet = new IconifyCollection();
+        $iconSet = new IconifyCollection;
         $iconSet->loadIconifyCollection($prefix);
 
         // List of Icons' names including icons' Aliases
@@ -123,27 +122,32 @@ class Helpers
             $iconsToSave[] = $iconData;
         }
 
-
         // For optimal seeding, because number of icons can be huge
         $chunks = array_chunk($iconsToSave, 200);
 
         foreach ($chunks as $chunk) {
             Icon::insert($chunk);
         }
+
         return true;
     }
 
     /**
      * Mape the arry representation of icon's attributes to an Icon model
-     * @param $iconArray
+     *
      * @return Icon
      */
     public static function mapIcon($iconArray)
     {
+
+        if ($iconArray instanceof Icon) {
+            return $iconArray;
+        }
+
         $keys = [
-            "id", "icon_set_id", "name", "parent", "icon_set_name", "readable_name", "body", "hidden",
-            "left", "top", "width", "height", "rotate", "hFlip", "vFlip",
-            "inlineTop", "inlineHeight", "verticalAlign"
+            'id', 'icon_set_id', 'name', 'parent', 'icon_set_name', 'readable_name', 'body', 'hidden',
+            'left', 'top', 'width', 'height', 'rotate', 'hFlip', 'vFlip',
+            'inlineTop', 'inlineHeight', 'verticalAlign',
         ];
 
         // We check if the given value is an Array  representation of an icon.
@@ -151,16 +155,16 @@ class Helpers
         $isIcon = count(array_diff($keys, $iconArrayKeys)) == 0;
 
         if ($isIcon) {
-            //Although we could grab the model by its Id,  We construct the object from the array,
+            // Although we could grab the model by its Id,  We construct the object from the array,
             // in case the icon is no more in DB if the icon set is deleted for example
-            $icon = new Icon();
+            $icon = new Icon;
             foreach ($iconArray as $key => $attribute) {
                 $icon->{$key} = $attribute;
             }
         } else {
-            throw new ApplicationException(trans("chkilel.icones::lang.formwidgets.error_wrong_variable_type", [
+            throw new ApplicationException(trans('chkilel.icones::lang.formwidgets.error_wrong_variable_type', [
                 'variable' => $iconArray,
-                'type' =>gettype($iconArray),
+                'type' => gettype($iconArray),
             ]));
         }
 
@@ -169,7 +173,8 @@ class Helpers
 
     /**
      * Set the size of the svg depending on the field size option
-     * @param $size small|large
+     *
+     * @param  $size  small|large
      * @return int
      */
     public static function setSvgHeight($fieldSize)
@@ -177,6 +182,7 @@ class Helpers
         if ($fieldSize == 'large') {
             return 24;
         }
+
         return 16;
     }
 }

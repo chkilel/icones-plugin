@@ -6,7 +6,7 @@
 .theme-selector-layout .theme-description p {opacity:0.6;filter:alpha(opacity=60)}
 .theme-selector-layout .theme-description h3 {margin:0 0 25px 0;font-size:28px;color:#2b3e50;display:inline-block}
 .theme-selector-layout .theme-description p.author {font-size:13px;display:inline-block;color:#808c8d}
-.theme-selector-layout .theme-description p.description {color:#2b3e50;font-size:14px;line-height:180%;margin-bottom:30px}
+.theme-selector-layout .theme-description p.description {color:#2b3e50;font-size:14px;line-height:180%;}
 .theme-selector-layout .theme-description .controls .btn >i {margin-right:5px;font-size:16px;position:relative;top:1px}
 .theme-selector-layout .theme-description .controls .btn >i.icon-star {color:#f1a84e}
 .theme-selector-layout .theme-description .controls .dropdown {display:inline-block}
@@ -64,7 +64,7 @@
     display: grid;
     grid-template-columns:
     repeat(3, minmax(0, 1fr));
-    row-gap: 4em;
+    row-gap: 2em;
     column-gap: 2em;
     align-content: center;
 }
@@ -87,4 +87,3 @@
 .description {
     text-align: center;
 }
-

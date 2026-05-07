@@ -1,4 +1,6 @@
-<?php namespace Chkilel\Icones\FormWidgets;
+<?php
+
+namespace Chkilel\Icones\FormWidgets;
 
 use Backend\Classes\FormWidgetBase;
 use Chkilel\Icones\Classes\Helpers;
@@ -29,22 +31,22 @@ class IconesFinder extends FormWidgetBase
     public $size = '';
 
     /**
-     * @var String Placeholder to display.
+     * @var string Placeholder to display.
      */
     public $placeholder = '';
 
     /**
-     * @var array  Set the icon sets to choose from.
+     * @var array Set the icon sets to choose from.
      */
     public $iconSets = [];
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     protected $defaultAlias = 'iconesfinder';
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function init()
     {
@@ -58,11 +60,12 @@ class IconesFinder extends FormWidgetBase
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function render()
     {
         $this->prepareVars();
+
         return $this->makePartial('iconesfinder');
     }
 
@@ -80,7 +83,7 @@ class IconesFinder extends FormWidgetBase
         $this->vars['showIconSetName'] = $this->showIconSetName;
         $this->vars['size'] = $this->size;
 
-        if (!is_array($this->iconSets)) {
+        if (! is_array($this->iconSets)) {
             $this->iconSets = explode('|', $this->iconSets);
         }
         $this->vars['iconSets'] = $this->iconSets;
@@ -88,13 +91,13 @@ class IconesFinder extends FormWidgetBase
 
         $this->vars['svgProps'] = [
             'inline' => true,
-            'height' => Helpers::setSvgHeight($this->size)
+            'height' => Helpers::setSvgHeight($this->size),
         ];
         $this->vars['sizeClass'] = $this->setSizeClass($this->size);
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function loadAssets()
     {
@@ -104,7 +107,7 @@ class IconesFinder extends FormWidgetBase
     /**
      * Store value as a Json string or null
      *
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function getSaveValue($value)
     {
@@ -127,9 +130,8 @@ class IconesFinder extends FormWidgetBase
         return $serialized;
     }
 
-
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function getLoadValue()
     {
@@ -148,7 +150,7 @@ class IconesFinder extends FormWidgetBase
     /**
      * Return the class to adjust the size of the field
      *
-     * @param $size small|large
+     * @param  $size  small|large
      * @return string
      */
     public function setSizeClass($size)

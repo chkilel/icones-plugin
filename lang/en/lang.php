@@ -1,4 +1,6 @@
-<?php return [
+<?php
+
+return [
     'plugin' => [
         'name' => 'Icônes',
         'description' => 'Access thousands of icons including popular icon sets, icon fonts and several Emoji sets from a backed Form Widget',
@@ -24,7 +26,7 @@
         'flash_deleted' => 'The Icon Set was deleted succesfully',
         'flash_installed' => 'The Icon Set was installed succesfully',
         'flash_error_installation' => 'Something wrong happened, Icon Set was not installed',
-        'scroll_to_top' =>'To the top'
+        'scroll_to_top' => 'To the top',
     ],
     'permission' => [
         'manage_tab' => 'Icônes',
