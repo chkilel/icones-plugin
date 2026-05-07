@@ -23,3 +23,8 @@
     - 'OCMS 3 compatible version'
 3.0.1:
     - 'Fix DB erro when installing Iconset'
+3.1.0:
+    - 'Fix Select2 initial value and clearing functionality'
+    - 'Add select2:clear event handler to allow icon deselection'
+    - 'Improve HTML escaping for security'
+    - 'Add templateResult and templateSelection for consistent display'
